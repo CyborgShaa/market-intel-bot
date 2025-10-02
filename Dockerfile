@@ -14,4 +14,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Keep the container running in a dormant state, ready for the scheduler (from your file)
-CMD ["sleep", "infinity"]
+CMD ["python", "main.py"]
+
