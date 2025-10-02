@@ -1,0 +1,12 @@
+# Python
+_pycache_/
+*.рус
+* .pyo
+*.pyd
+Python
+env/
+venv/
+pip-selfcheck.json
+.DS_Store
+# Secrets
+.env
