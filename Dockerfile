@@ -1,21 +1,17 @@
-# Use an official lightweight Python image as a parent image
-# Using a specific version is better than using 'latest'
+# Use a modern, specific, and lightweight Python version (from our file)
 FROM python:3.11-slim
 
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the file that lists the dependencies
+# Copy the requirements file
 COPY requirements.txt .
 
-# Install the dependencies from the requirements file
-# --no-cache-dir makes the image smaller
+# Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of your application's code into the container
+# Copy ALL our project files into the container (from our file)
 COPY . .
 
-# Specify the command to run when the container starts.
-# While the Dokploy scheduler will run 'python main.py' directly,
-# this is good practice for defining the container's default behavior.
-CMD ["python", "main.py"]
+# Keep the container running in a dormant state, ready for the scheduler (from your file)
+CMD ["sleep", "infinity"]
