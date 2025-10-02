@@ -1,1 +1,3 @@
-requests 
+requests
+python-decouple
+google-generativeai
